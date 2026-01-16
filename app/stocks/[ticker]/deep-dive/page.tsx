@@ -116,8 +116,41 @@ export default function DeepDivePage({ params }: PageProps) {
     const stock = stockMap.get(ticker);
     const deepDive = deepDiveMap.get(ticker);
 
-    if (!stock || !deepDive) {
+    if (!stock) {
         notFound();
+    }
+
+    if (!deepDive) {
+        return (
+            <div className="min-h-screen bg-background py-8">
+                <div className="container mx-auto px-4 max-w-4xl">
+                    <nav className="mb-6 flex items-center gap-2 text-sm">
+                        <Link href={`/stocks/${ticker}`} className="text-text-secondary hover:text-accent-blue flex items-center gap-1">
+                            <ArrowLeft className="w-4 h-4" />
+                            กลับไปหน้าหุ้น {ticker}
+                        </Link>
+                    </nav>
+
+                    <Card className="text-center py-16 border-3 border-black shadow-brutal-md">
+                        <CardContent>
+                            <div className="text-6xl mb-6">🕵️‍♂️</div>
+                            <h1 className="text-3xl font-bold font-display mb-4">
+                                กำลังเจาะลึกข้อมูล {stock.name}
+                            </h1>
+                            <p className="text-xl text-text-secondary mb-8 max-w-2xl mx-auto">
+                                ทีมงาน AI ของเรากำลังรวบรวมข้อมูลเชิงลึก 10 มิติสำหรับหุ้นตัวนี้อยู่
+                                โปรดกลับมาติดตามใหม่อีกครั้งเร็วๆ นี้
+                            </p>
+                            <Link href={`/stocks/${ticker}`}>
+                                <Button variant="primary" size="lg" className="border-2 border-black">
+                                    กลับไปดูข้อมูลพื้นฐาน
+                                </Button>
+                            </Link>
+                        </CardContent>
+                    </Card>
+                </div>
+            </div>
+        );
     }
 
     const isPositive = stock.changePercent >= 0;

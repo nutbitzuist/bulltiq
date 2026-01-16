@@ -97,6 +97,8 @@ function renderFormattedAnalysis(analysisTh: string) {
     const headerPatterns = [
         "ETF นี้คืออะไร? ลงทุนในอะไร?",
         "บริษัทนี้คืออะไร? ลงทุนในอะไร?",
+        "บริษัทนี้คืออะไร ทำอะไร",
+        "บริษัทนี้ทำธุรกิจอะไร",
         "กองทุนนี้คืออะไร ทำอะไร",
         "กองทุนนี้คืออะไร",
         "ประวัติและความเป็นมา",
@@ -263,11 +265,6 @@ export default function StockDetailPage({ params }: PageProps) {
                             </div>
 
                             <div className="flex gap-2 flex-wrap">
-                                <Link href={`/stocks/${ticker}/deep-dive`}>
-                                    <Button variant="default" size="sm" className="bg-accent-purple hover:bg-accent-purple/90">
-                                        🔬 Deep Dive
-                                    </Button>
-                                </Link>
                                 <a
                                     href={getCompanyWebsite(ticker)}
                                     target="_blank"
@@ -401,6 +398,13 @@ export default function StockDetailPage({ params }: PageProps) {
                             {hasRealAnalysis ? (
                                 <div className="max-w-none">
                                     {renderFormattedAnalysis(stock.analysisTh!)}
+                                    <div className="mt-8 flex justify-center">
+                                        <Link href={`/stocks/${ticker}/deep-dive`}>
+                                            <Button size="lg" className="bg-primary text-black border-2 border-black shadow-brutal-sm hover:translate-y-[-2px] hover:shadow-brutal-md text-lg font-bold px-8">
+                                                อ่านบทวิเคราะห์เจาะลึก (Deep Dive)
+                                            </Button>
+                                        </Link>
+                                    </div>
                                 </div>
                             ) : (
                                 <div className="text-center py-12">
