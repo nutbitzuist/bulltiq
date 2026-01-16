@@ -21,6 +21,7 @@ import nasdaq100Data from "@/data/nasdaq100.json";
 import dowJonesData from "@/data/dow-jones.json";
 import type { Stock } from "@/types";
 import { ShareButton } from "@/components/stocks/share-button";
+import { getCompanyWebsite } from "@/lib/company-websites";
 
 // Combine all stocks for lookup
 const allStocks = [...sp500Data, ...nasdaq100Data, ...dowJonesData] as Stock[];
@@ -263,7 +264,7 @@ export default function StockDetailPage({ params }: PageProps) {
 
                             <div className="flex gap-2">
                                 <a
-                                    href={`https://www.google.com/search?q=${stock.name}+official+website`}
+                                    href={getCompanyWebsite(ticker)}
                                     target="_blank"
                                     rel="noopener noreferrer"
                                 >

@@ -11,7 +11,7 @@ import {
     formatNumber,
     cn,
 } from "@/lib/utils";
-import { TrendingUp, TrendingDown, ArrowLeft, FileText } from "lucide-react";
+import { TrendingUp, TrendingDown, ArrowLeft, FileText, ExternalLink, BarChart3, Globe } from "lucide-react";
 import { ShareButton } from "@/components/stocks/share-button";
 import topETFsData from "@/data/top-etfs.json";
 import type { ETF } from "@/types";
@@ -222,6 +222,86 @@ export default function ETFDetailPage({ params }: PageProps) {
                     </CardContent>
                 </Card>
 
+                {/* External Links Section */}
+                <div className="mb-8">
+                    <h2 className="text-xl font-bold mb-4 flex items-center gap-2">
+                        <span className="bg-accent-blue text-white px-3 py-1 border-2 border-black">🔗</span>
+                        ลิงก์ข้อมูลเพิ่มเติม
+                    </h2>
+                    <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+                        <a
+                            href={`https://finance.yahoo.com/quote/${ticker}`}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className={cn(
+                                "bg-white border-3 border-black p-4 shadow-brutal-md",
+                                "hover:translate-x-1 hover:translate-y-1 hover:shadow-brutal-sm",
+                                "transition-all duration-200 flex items-center gap-3"
+                            )}
+                        >
+                            <BarChart3 className="w-6 h-6 text-purple-600" />
+                            <div>
+                                <div className="font-bold">Yahoo Finance</div>
+                                <div className="text-sm text-text-secondary">ข้อมูลราคา & ข่าว</div>
+                            </div>
+                            <ExternalLink className="w-4 h-4 ml-auto" />
+                        </a>
+
+                        <a
+                            href={`https://www.google.com/finance/quote/${ticker}:NYSEARCA`}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className={cn(
+                                "bg-white border-3 border-black p-4 shadow-brutal-md",
+                                "hover:translate-x-1 hover:translate-y-1 hover:shadow-brutal-sm",
+                                "transition-all duration-200 flex items-center gap-3"
+                            )}
+                        >
+                            <Globe className="w-6 h-6 text-blue-600" />
+                            <div>
+                                <div className="font-bold">Google Finance</div>
+                                <div className="text-sm text-text-secondary">ภาพรวมกองทุน</div>
+                            </div>
+                            <ExternalLink className="w-4 h-4 ml-auto" />
+                        </a>
+
+                        <a
+                            href={`https://www.tradingview.com/symbols/${ticker}/`}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className={cn(
+                                "bg-white border-3 border-black p-4 shadow-brutal-md",
+                                "hover:translate-x-1 hover:translate-y-1 hover:shadow-brutal-sm",
+                                "transition-all duration-200 flex items-center gap-3"
+                            )}
+                        >
+                            <BarChart3 className="w-6 h-6 text-green-600" />
+                            <div>
+                                <div className="font-bold">TradingView</div>
+                                <div className="text-sm text-text-secondary">กราฟ & เทคนิคอล</div>
+                            </div>
+                            <ExternalLink className="w-4 h-4 ml-auto" />
+                        </a>
+
+                        <a
+                            href={`https://etfdb.com/etf/${ticker}/`}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className={cn(
+                                "bg-white border-3 border-black p-4 shadow-brutal-md",
+                                "hover:translate-x-1 hover:translate-y-1 hover:shadow-brutal-sm",
+                                "transition-all duration-200 flex items-center gap-3"
+                            )}
+                        >
+                            <FileText className="w-6 h-6 text-orange-600" />
+                            <div>
+                                <div className="font-bold">ETF Database</div>
+                                <div className="text-sm text-text-secondary">ข้อมูล Holdings</div>
+                            </div>
+                            <ExternalLink className="w-4 h-4 ml-auto" />
+                        </a>
+                    </div>
+                </div>
                 {/* TradingView Chart */}
                 <div className="mb-8">
                     <h2 className="text-xl font-bold mb-4 flex items-center gap-2">

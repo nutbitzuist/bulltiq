@@ -1,4 +1,4 @@
-/
+/*
  * Batch 3 Thai Analyses - 20 stocks
  * TMO, ADBE, CRM, ACN, CSCO, HON, BA, CAT, GS, MS,
  * BLK, GILD, INTU, ISRG, BKNG, AXP, CVX, NKE, VZ, SBUX
