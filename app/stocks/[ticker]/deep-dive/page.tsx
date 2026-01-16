@@ -138,7 +138,7 @@ export default function DeepDivePage({ params }: PageProps) {
                                 กำลังเจาะลึกข้อมูล {stock.name}
                             </h1>
                             <p className="text-xl text-text-secondary mb-8 max-w-2xl mx-auto">
-                                ทีมงาน AI ของเรากำลังรวบรวมข้อมูลเชิงลึก 10 มิติสำหรับหุ้นตัวนี้อยู่
+                                ทีมงานของเรากำลังรวบรวมข้อมูลเชิงลึก 10 มิติสำหรับหุ้นตัวนี้อยู่
                                 โปรดกลับมาติดตามใหม่อีกครั้งเร็วๆ นี้
                             </p>
                             <Link href={`/stocks/${ticker}`}>
