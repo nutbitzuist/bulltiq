@@ -262,7 +262,12 @@ export default function StockDetailPage({ params }: PageProps) {
                                 </div>
                             </div>
 
-                            <div className="flex gap-2">
+                            <div className="flex gap-2 flex-wrap">
+                                <Link href={`/stocks/${ticker}/deep-dive`}>
+                                    <Button variant="default" size="sm" className="bg-accent-purple hover:bg-accent-purple/90">
+                                        🔬 Deep Dive
+                                    </Button>
+                                </Link>
                                 <a
                                     href={getCompanyWebsite(ticker)}
                                     target="_blank"

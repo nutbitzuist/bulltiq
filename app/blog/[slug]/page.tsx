@@ -1,313 +1,212 @@
 import { Metadata } from "next";
-import { notFound } from "next/navigation";
 import Link from "next/link";
-import { Card } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
+import { notFound } from "next/navigation";
+import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { ShareButton } from "@/components/stocks/share-button";
-import { Calendar, Clock, User, ArrowLeft, BookOpen } from "lucide-react";
-import blogPosts from "@/data/blog-posts.json";
+import { Button } from "@/components/ui/button";
+import { ArrowLeft, Clock, Calendar } from "lucide-react";
+import blogArticles from "@/data/blog-articles.json";
 
-interface BlogPostPageProps {
+interface BlogArticle {
+    id: string;
+    slug: string;
+    title: string;
+    excerpt: string;
+    category: string;
+    publishedAt: string;
+    readTime: string;
+    coverEmoji: string;
+    content: string;
+}
+
+const articles = blogArticles as BlogArticle[];
+const articleMap = new Map<string, BlogArticle>();
+articles.forEach((article) => {
+    articleMap.set(article.slug, article);
+});
+
+interface PageProps {
     params: { slug: string };
 }
 
-// Generate static params for all blog posts
-export async function generateStaticParams() {
-    return blogPosts.map((post) => ({
-        slug: post.slug,
-    }));
-}
+export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
+    const article = articleMap.get(params.slug);
 
-// Generate metadata for SEO
-export async function generateMetadata({ params }: BlogPostPageProps): Promise<Metadata> {
-    const post = blogPosts.find((p) => p.slug === params.slug);
-
-    if (!post) {
-        return {
-            title: "บทความไม่พบ | Bulltiq",
-        };
+    if (!article) {
+        return { title: "ไม่พบบทความ" };
     }
 
     return {
-        title: `${post.title} | Bulltiq`,
-        description: post.excerpt,
-        keywords: post.tags.join(", "),
-        authors: [{ name: post.author }],
-        openGraph: {
-            title: post.title,
-            description: post.excerpt,
-            type: "article",
-            publishedTime: post.publishedAt,
-            authors: [post.author],
-            tags: post.tags,
-        },
-        twitter: {
-            card: "summary_large_image",
-            title: post.title,
-            description: post.excerpt,
-        },
+        title: `${article.title} | Bulltiq Blog`,
+        description: article.excerpt,
     };
 }
 
-export default function BlogPostPage({ params }: BlogPostPageProps) {
-    const post = blogPosts.find((p) => p.slug === params.slug);
+export function generateStaticParams() {
+    return articles.map((article) => ({ slug: article.slug }));
+}
 
-    if (!post) {
+function formatThaiDate(dateString: string): string {
+    const date = new Date(dateString);
+    const months = [
+        "มกราคม", "กุมภาพันธ์", "มีนาคม", "เมษายน", "พฤษภาคม", "มิถุนายน",
+        "กรกฎาคม", "สิงหาคม", "กันยายน", "ตุลาคม", "พฤศจิกายน", "ธันวาคม"
+    ];
+    return `${date.getDate()} ${months[date.getMonth()]} ${date.getFullYear() + 543}`;
+}
+
+function renderContent(content: string) {
+    const paragraphs = content.split('\n\n');
+
+    return paragraphs.map((paragraph, i) => {
+        const trimmed = paragraph.trim();
+        if (!trimmed) return null;
+
+        // Check for headers (lines ending with ? or : and shorter than 60 chars, or starting with คำถามที่)
+        const isHeader = (
+            (trimmed.endsWith('?') && trimmed.length < 80) ||
+            (trimmed.endsWith(':') && trimmed.length < 60) ||
+            trimmed.startsWith('คำถามที่') ||
+            trimmed.startsWith('สรุป') ||
+            /^[0-9]+\.\s/.test(trimmed.slice(0, 5))
+        );
+
+        if (isHeader && !trimmed.startsWith('•') && !trimmed.startsWith('-')) {
+            return (
+                <h2 key={i} className="text-xl font-bold mt-8 mb-4 bg-primary/20 px-3 py-2 border-l-4 border-primary">
+                    {trimmed}
+                </h2>
+            );
+        }
+
+        // Check for bullet points
+        if (trimmed.startsWith('•') || trimmed.startsWith('-') || trimmed.startsWith('→')) {
+            const lines = trimmed.split('\n');
+            return (
+                <ul key={i} className="mb-4 space-y-2">
+                    {lines.map((line, j) => (
+                        <li key={j} className="ml-4 text-text-secondary flex items-start gap-2">
+                            <span className="text-primary mt-1">•</span>
+                            <span>{line.replace(/^[•\-→]\s*/, '')}</span>
+                        </li>
+                    ))}
+                </ul>
+            );
+        }
+
+        // Regular paragraph
+        return (
+            <p key={i} className="mb-4 text-text-secondary leading-relaxed text-lg">
+                {trimmed}
+            </p>
+        );
+    });
+}
+
+export default function BlogArticlePage({ params }: PageProps) {
+    const article = articleMap.get(params.slug);
+
+    if (!article) {
         notFound();
     }
 
-    // Get related posts (same category, excluding current)
-    const relatedPosts = blogPosts
-        .filter((p) => p.category === post.category && p.id !== post.id)
+    // Get related articles
+    const relatedArticles = articles
+        .filter((a) => a.slug !== article.slug)
         .slice(0, 3);
 
-    // Convert content to paragraphs
-    const paragraphs = post.content.split('\n\n');
-
     return (
-        <>
-            {/* JSON-LD Structured Data for SEO */}
-            <script
-                type="application/ld+json"
-                dangerouslySetInnerHTML={{
-                    __html: JSON.stringify({
-                        "@context": "https://schema.org",
-                        "@type": "Article",
-                        "headline": post.title,
-                        "description": post.excerpt,
-                        "author": {
-                            "@type": "Person",
-                            "name": post.author
-                        },
-                        "publisher": {
-                            "@type": "Organization",
-                            "name": "Bulltiq",
-                            "logo": {
-                                "@type": "ImageObject",
-                                "url": "https://bulltiq.vercel.app/favicon.ico"
-                            }
-                        },
-                        "datePublished": post.publishedAt,
-                        "dateModified": post.publishedAt,
-                        "mainEntityOfPage": {
-                            "@type": "WebPage",
-                            "@id": `https://bulltiq.vercel.app/blog/${post.slug}`
-                        },
-                        "keywords": post.tags.join(", "),
-                        "articleSection": post.category,
-                        "inLanguage": "th"
-                    })
-                }}
-            />
+        <div className="min-h-screen bg-background py-8">
+            <div className="container mx-auto px-4 max-w-3xl">
+                {/* Breadcrumb */}
+                <nav className="mb-6 flex items-center gap-2 text-sm">
+                    <Link href="/" className="text-text-secondary hover:text-accent-blue">
+                        หน้าแรก
+                    </Link>
+                    <span className="text-text-secondary">&gt;</span>
+                    <Link href="/blog" className="text-text-secondary hover:text-accent-blue">
+                        บทความ
+                    </Link>
+                    <span className="text-text-secondary">&gt;</span>
+                    <span className="font-semibold truncate max-w-[200px]">{article.title}</span>
+                </nav>
 
-            {/* Breadcrumb JSON-LD */}
-            <script
-                type="application/ld+json"
-                dangerouslySetInnerHTML={{
-                    __html: JSON.stringify({
-                        "@context": "https://schema.org",
-                        "@type": "BreadcrumbList",
-                        "itemListElement": [
-                            {
-                                "@type": "ListItem",
-                                "position": 1,
-                                "name": "หน้าแรก",
-                                "item": "https://bulltiq.vercel.app"
-                            },
-                            {
-                                "@type": "ListItem",
-                                "position": 2,
-                                "name": "บทความ",
-                                "item": "https://bulltiq.vercel.app/blog"
-                            },
-                            {
-                                "@type": "ListItem",
-                                "position": 3,
-                                "name": post.title,
-                                "item": `https://bulltiq.vercel.app/blog/${post.slug}`
-                            }
-                        ]
-                    })
-                }}
-            />
+                {/* Back Button */}
+                <Link href="/blog" className="inline-block mb-6">
+                    <Button variant="outline" size="sm">
+                        <ArrowLeft className="w-4 h-4 mr-2" />
+                        กลับไปบทความทั้งหมด
+                    </Button>
+                </Link>
 
-            <article className="min-h-screen bg-background">
-                {/* Header */}
-                <header className="py-12 md:py-16 bg-gradient-to-br from-primary via-primary to-accent-orange border-b-3 border-black">
-                    <div className="container mx-auto px-4">
-                        {/* Breadcrumb */}
-                        <nav className="mb-6">
-                            <ol className="flex items-center gap-2 text-sm">
-                                <li>
-                                    <Link href="/" className="hover:underline">
-                                        หน้าแรก
-                                    </Link>
-                                </li>
-                                <li>/</li>
-                                <li>
-                                    <Link href="/blog" className="hover:underline">
-                                        บทความ
-                                    </Link>
-                                </li>
-                                <li>/</li>
-                                <li className="text-text-secondary truncate max-w-[200px]">
-                                    {post.title}
-                                </li>
-                            </ol>
-                        </nav>
-
-                        <div className="max-w-3xl">
-                            <Badge variant="default" className="mb-4">
-                                {post.category}
+                {/* Article Header */}
+                <Card className="mb-8">
+                    <CardContent className="p-8">
+                        <div className="text-center mb-6">
+                            <div className="text-6xl mb-4">{article.coverEmoji}</div>
+                            <Badge variant="info" className="mb-4">
+                                {article.category}
                             </Badge>
-                            <h1 className="text-2xl md:text-4xl font-bold font-display mb-6 leading-tight">
-                                {post.title}
+                            <h1 className="text-3xl font-bold font-display mb-4">
+                                {article.title}
                             </h1>
-                            <p className="text-lg text-text-secondary mb-6">
-                                {post.excerpt}
+                            <p className="text-lg text-text-secondary mb-4">
+                                {article.excerpt}
                             </p>
-                            <div className="flex flex-wrap items-center gap-4 text-sm">
-                                <span className="flex items-center gap-2 bg-white/80 px-3 py-1 border-2 border-black">
-                                    <User className="w-4 h-4" />
-                                    {post.author}
-                                </span>
-                                <span className="flex items-center gap-2 bg-white/80 px-3 py-1 border-2 border-black">
+                            <div className="flex items-center justify-center gap-4 text-sm text-text-secondary">
+                                <span className="flex items-center gap-1">
                                     <Calendar className="w-4 h-4" />
-                                    {new Date(post.publishedAt).toLocaleDateString('th-TH', {
-                                        year: 'numeric',
-                                        month: 'long',
-                                        day: 'numeric'
-                                    })}
+                                    {formatThaiDate(article.publishedAt)}
                                 </span>
-                                <span className="flex items-center gap-2 bg-white/80 px-3 py-1 border-2 border-black">
+                                <span className="flex items-center gap-1">
                                     <Clock className="w-4 h-4" />
-                                    {post.readingTime} นาทีในการอ่าน
+                                    {article.readTime}
                                 </span>
                             </div>
                         </div>
-                    </div>
-                </header>
+                    </CardContent>
+                </Card>
 
-                {/* Content */}
-                <div className="container mx-auto px-4 py-12">
-                    <div className="max-w-3xl mx-auto">
-                        {/* Article Content */}
-                        <div className="prose prose-lg max-w-none">
-                            {paragraphs.map((paragraph, index) => {
-                                // Check if paragraph looks like a heading (short and no period at end)
-                                const isHeading = paragraph.length < 50 && !paragraph.endsWith('.') && !paragraph.endsWith('?');
+                {/* Article Content */}
+                <Card className="mb-8">
+                    <CardContent className="p-8">
+                        <article className="prose max-w-none">
+                            {renderContent(article.content)}
+                        </article>
+                    </CardContent>
+                </Card>
 
-                                if (isHeading) {
-                                    return (
-                                        <h2 key={index} className="text-xl md:text-2xl font-bold mt-8 mb-4 text-black">
-                                            {paragraph}
-                                        </h2>
-                                    );
-                                }
-
-                                return (
-                                    <p key={index} className="text-text-primary leading-relaxed mb-4">
-                                        {paragraph}
-                                    </p>
-                                );
-                            })}
-                        </div>
-
-                        {/* Tags */}
-                        <div className="mt-12 pt-6 border-t-2 border-black/20">
-                            <h3 className="font-bold mb-3">แท็ก:</h3>
-                            <div className="flex flex-wrap gap-2">
-                                {post.tags.map((tag) => (
-                                    <Badge key={tag} variant="outline">
-                                        #{tag}
-                                    </Badge>
-                                ))}
-                            </div>
-                        </div>
-
-                        {/* Share */}
-                        <div className="mt-8 p-6 bg-surface border-3 border-black">
-                            <div className="flex items-center justify-between">
-                                <div>
-                                    <h3 className="font-bold mb-1">ชอบบทความนี้?</h3>
-                                    <p className="text-sm text-text-secondary">แชร์ให้เพื่อนๆ ได้อ่านด้วย</p>
-                                </div>
-                                <ShareButton
-                                    url={`https://bulltiq.com/blog/${post.slug}`}
-                                    customTitle={post.title}
-                                    customText={`อ่านบทความ "${post.title}" ได้ที่ Bulltiq`}
-                                />
-                            </div>
-                        </div>
-
-                        {/* Back to Blog */}
-                        <div className="mt-8">
-                            <Link href="/blog">
-                                <Button variant="outline">
-                                    <ArrowLeft className="w-4 h-4 mr-2" />
-                                    กลับไปหน้าบทความ
-                                </Button>
-                            </Link>
-                        </div>
-                    </div>
-                </div>
-
-                {/* Related Posts */}
-                {relatedPosts.length > 0 && (
-                    <section className="py-12 bg-surface border-t-3 border-black">
-                        <div className="container mx-auto px-4">
-                            <h2 className="text-xl font-bold mb-6 flex items-center gap-2">
-                                <BookOpen className="w-5 h-5" />
-                                บทความที่เกี่ยวข้อง
-                            </h2>
-                            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                                {relatedPosts.map((relatedPost) => (
-                                    <Link key={relatedPost.id} href={`/blog/${relatedPost.slug}`}>
-                                        <Card className="h-full hover:shadow-brutal-lg hover:translate-x-[-2px] hover:translate-y-[-2px] transition-all">
-                                            <div className="h-24 bg-gradient-to-br from-accent-blue to-accent-purple flex items-center justify-center">
-                                                <span className="text-3xl">📝</span>
-                                            </div>
-                                            <div className="p-4">
-                                                <h3 className="font-bold mb-2 line-clamp-2">
-                                                    {relatedPost.title}
-                                                </h3>
-                                                <p className="text-sm text-text-secondary line-clamp-2">
-                                                    {relatedPost.excerpt}
-                                                </p>
-                                            </div>
-                                        </Card>
-                                    </Link>
-                                ))}
-                            </div>
-                        </div>
-                    </section>
-                )}
-
-                {/* CTA */}
-                <section className="py-12 bg-black text-white">
-                    <div className="container mx-auto px-4 text-center">
-                        <h2 className="text-xl md:text-2xl font-bold mb-4">
-                            เริ่มต้นศึกษาหุ้นอเมริกา
-                        </h2>
-                        <p className="text-white/80 mb-6">
-                            ดูข้อมูลหุ้น S&P 500, NASDAQ 100 และ ETF พร้อมบทวิเคราะห์ภาษาไทย
+                {/* Disclaimer */}
+                <Card className="mb-8 bg-yellow-50 border-yellow-400">
+                    <CardContent className="p-4">
+                        <p className="text-sm text-yellow-800">
+                            <strong>⚠️ ข้อสงวนสิทธิ์:</strong> บทความนี้จัดทำขึ้นเพื่อให้ความรู้เท่านั้น ไม่ถือเป็นคำแนะนำในการลงทุน
+                            ผู้อ่านควรศึกษาข้อมูลเพิ่มเติมและปรึกษาผู้เชี่ยวชาญก่อนตัดสินใจลงทุน
                         </p>
-                        <div className="flex flex-wrap justify-center gap-4">
-                            <Link href="/stocks/sp500">
-                                <Button variant="primary" className="bg-primary text-black">
-                                    หุ้น S&P 500
-                                </Button>
-                            </Link>
-                            <Link href="/stocks/nasdaq100">
-                                <Button variant="outline" className="border-white text-white hover:bg-white hover:text-black">
-                                    หุ้น NASDAQ 100
-                                </Button>
-                            </Link>
+                    </CardContent>
+                </Card>
+
+                {/* Related Articles */}
+                {relatedArticles.length > 0 && (
+                    <div>
+                        <h2 className="text-xl font-bold mb-4">📖 บทความที่เกี่ยวข้อง</h2>
+                        <div className="grid md:grid-cols-3 gap-4">
+                            {relatedArticles.map((related) => (
+                                <Link key={related.id} href={`/blog/${related.slug}`}>
+                                    <Card className="h-full hover:shadow-brutal-md transition-all">
+                                        <CardContent className="p-4">
+                                            <div className="text-2xl mb-2">{related.coverEmoji}</div>
+                                            <h3 className="font-bold text-sm line-clamp-2">
+                                                {related.title}
+                                            </h3>
+                                        </CardContent>
+                                    </Card>
+                                </Link>
+                            ))}
                         </div>
                     </div>
-                </section>
-            </article>
-        </>
+                )}
+            </div>
+        </div>
     );
 }
