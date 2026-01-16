@@ -3,25 +3,88 @@
 @tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  /* Neo-Brutalism Colors */
+  --primary: #FFD93D;
+  --primary-dark: #F5C800;
+  --success: #6BCB77;
+  --danger: #FF6B6B;
+  --accent-blue: #4D96FF;
+  --accent-purple: #9B5DE5;
+  --background: #FFFBEB;
+  --surface: #FFFFFF;
+  --border: #000000;
+  --text-primary: #1A1A1A;
+  --text-secondary: #4A4A4A;
 }
 
 body {
-  color: var(--foreground);
+  color: var(--text-primary);
   background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  font-feature-settings: "ss01", "ss02";
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Neo-Brutalism Base Styles */
+@layer base {
+  * {
+    border-color: var(--border);
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-weight: 700;
+    letter-spacing: -0.02em;
+  }
+}
+
+@layer components {
+  /* Neo-Brutalism Card */
+  .card-brutal {
+    @apply bg-surface border-3 border-black shadow-brutal-lg p-6;
+    @apply hover:translate-x-1 hover:translate-y-1 hover:shadow-brutal-md;
+    @apply transition-all duration-200;
+  }
+  
+  /* Neo-Brutalism Button Base */
+  .btn-brutal {
+    @apply px-6 py-3 font-bold border-3 border-black;
+    @apply shadow-brutal-md;
+    @apply hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-brutal-sm;
+    @apply active:translate-x-1 active:translate-y-1 active:shadow-none;
+    @apply transition-all duration-150;
+    @apply focus:outline-none focus:ring-2 focus:ring-black focus:ring-offset-2;
+  }
+  
+  /* Neo-Brutalism Input */
+  .input-brutal {
+    @apply px-4 py-3 bg-white border-3 border-black;
+    @apply shadow-brutal-sm;
+    @apply focus:outline-none focus:shadow-brutal-md focus:translate-x-[-2px] focus:translate-y-[-2px];
+    @apply transition-all duration-150;
+    @apply placeholder:text-text-secondary/60;
+  }
+  
+  /* Positive/Negative indicators */
+  .text-positive {
+    @apply text-success font-semibold;
+  }
+  
+  .text-negative {
+    @apply text-danger font-semibold;
+  }
 }
 
 @layer utilities {
   .text-balance {
     text-wrap: balance;
+  }
+  
+  /* Market colors */
+  .market-up {
+    @apply text-success;
+  }
+  
+  .market-down {
+    @apply text-danger;
   }
 }

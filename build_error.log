@@ -1,0 +1,558 @@
+
+> bulltiq@0.1.0 build
+> next build
+
+  ▲ Next.js 14.2.33
+  - Environments: .env.local
+
+   Creating an optimized production build ...
+ ✓ Compiled successfully
+   Linting and checking validity of types ...
+   Collecting page data ...
+   Generating static pages (0/634) ...
+TypeError: a.analysisTh.includes is not a function
+    at D (/Users/nut/Downloads/Bulltiq/.next/server/app/stocks/[ticker]/page.js:1:4327)
+    at eh (/Users/nut/Downloads/Bulltiq/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js:12:134660)
+    at e (/Users/nut/Downloads/Bulltiq/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js:12:137545)
+    at ek (/Users/nut/Downloads/Bulltiq/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js:12:138019)
+    at Array.toJSON (/Users/nut/Downloads/Bulltiq/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js:12:135629)
+    at stringify (<anonymous>)
+    at eP (/Users/nut/Downloads/Bulltiq/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js:12:142093)
+    at eE (/Users/nut/Downloads/Bulltiq/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js:12:142572)
+    at AsyncLocalStorage.run (node:async_hooks:338:14)
+    at Timeout._onTimeout (/Users/nut/Downloads/Bulltiq/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js:12:150373) {
+  digest: '106400177'
+}
+TypeError: a.analysisTh.includes is not a function
+    at D (/Users/nut/Downloads/Bulltiq/.next/server/app/stocks/[ticker]/page.js:1:4327)
+    at eh (/Users/nut/Downloads/Bulltiq/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js:12:134660)
+    at e (/Users/nut/Downloads/Bulltiq/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js:12:137545)
+    at ek (/Users/nut/Downloads/Bulltiq/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js:12:138019)
+    at Array.toJSON (/Users/nut/Downloads/Bulltiq/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js:12:135629)
+    at stringify (<anonymous>)
+    at eP (/Users/nut/Downloads/Bulltiq/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js:12:142093)
+    at eE (/Users/nut/Downloads/Bulltiq/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js:12:142572)
+    at Timeout._onTimeout (/Users/nut/Downloads/Bulltiq/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js:12:135349)
+    at listOnTimeout (node:internal/timers:569:17) {
+  digest: '1906633506'
+}
+TypeError: a.analysisTh.includes is not a function
+    at D (/Users/nut/Downloads/Bulltiq/.next/server/app/stocks/[ticker]/page.js:1:4327)
+    at eh (/Users/nut/Downloads/Bulltiq/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js:12:134660)
+    at e (/Users/nut/Downloads/Bulltiq/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js:12:137545)
+    at ek (/Users/nut/Downloads/Bulltiq/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js:12:138019)
+    at Array.toJSON (/Users/nut/Downloads/Bulltiq/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js:12:135629)
+    at stringify (<anonymous>)
+    at eP (/Users/nut/Downloads/Bulltiq/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js:12:142093)
+    at eE (/Users/nut/Downloads/Bulltiq/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js:12:142572)
+    at Timeout._onTimeout (/Users/nut/Downloads/Bulltiq/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js:12:135349)
+    at listOnTimeout (node:internal/timers:569:17) {
+  digest: '1906633506'
+}
+
+Error occurred prerendering page "/stocks/GOOGL". Read more: https://nextjs.org/docs/messages/prerender-error
+
+TypeError: a.analysisTh.includes is not a function
+    at D (/Users/nut/Downloads/Bulltiq/.next/server/app/stocks/[ticker]/page.js:1:4327)
+    at eh (/Users/nut/Downloads/Bulltiq/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js:12:134660)
+    at e (/Users/nut/Downloads/Bulltiq/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js:12:137545)
+    at ek (/Users/nut/Downloads/Bulltiq/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js:12:138019)
+    at Array.toJSON (/Users/nut/Downloads/Bulltiq/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js:12:135629)
+    at stringify (<anonymous>)
+    at eP (/Users/nut/Downloads/Bulltiq/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js:12:142093)
+    at eE (/Users/nut/Downloads/Bulltiq/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js:12:142572)
+    at AsyncLocalStorage.run (node:async_hooks:338:14)
+    at Timeout._onTimeout (/Users/nut/Downloads/Bulltiq/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js:12:150373)
+TypeError: a.analysisTh.includes is not a function
+    at D (/Users/nut/Downloads/Bulltiq/.next/server/app/stocks/[ticker]/page.js:1:4327)
+    at eh (/Users/nut/Downloads/Bulltiq/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js:12:134660)
+    at e (/Users/nut/Downloads/Bulltiq/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js:12:137545)
+    at ek (/Users/nut/Downloads/Bulltiq/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js:12:138019)
+    at Array.toJSON (/Users/nut/Downloads/Bulltiq/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js:12:135629)
+    at stringify (<anonymous>)
+    at eP (/Users/nut/Downloads/Bulltiq/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js:12:142093)
+    at eE (/Users/nut/Downloads/Bulltiq/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js:12:142572)
+    at AsyncLocalStorage.run (node:async_hooks:338:14)
+    at Timeout._onTimeout (/Users/nut/Downloads/Bulltiq/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js:12:150373) {
+  digest: '106400177'
+}
+TypeError: a.analysisTh.includes is not a function
+    at D (/Users/nut/Downloads/Bulltiq/.next/server/app/stocks/[ticker]/page.js:1:4327)
+    at eh (/Users/nut/Downloads/Bulltiq/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js:12:134660)
+    at e (/Users/nut/Downloads/Bulltiq/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js:12:137545)
+    at ek (/Users/nut/Downloads/Bulltiq/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js:12:138019)
+    at Array.toJSON (/Users/nut/Downloads/Bulltiq/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js:12:135629)
+    at stringify (<anonymous>)
+    at eP (/Users/nut/Downloads/Bulltiq/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js:12:142093)
+    at eE (/Users/nut/Downloads/Bulltiq/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js:12:142572)
+    at Timeout._onTimeout (/Users/nut/Downloads/Bulltiq/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js:12:135349)
+    at listOnTimeout (node:internal/timers:569:17) {
+  digest: '1906633506'
+}
+TypeError: a.analysisTh.includes is not a function
+    at D (/Users/nut/Downloads/Bulltiq/.next/server/app/stocks/[ticker]/page.js:1:4327)
+    at eh (/Users/nut/Downloads/Bulltiq/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js:12:134660)
+    at e (/Users/nut/Downloads/Bulltiq/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js:12:137545)
+    at ek (/Users/nut/Downloads/Bulltiq/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js:12:138019)
+    at Array.toJSON (/Users/nut/Downloads/Bulltiq/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js:12:135629)
+    at stringify (<anonymous>)
+    at eP (/Users/nut/Downloads/Bulltiq/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js:12:142093)
+    at eE (/Users/nut/Downloads/Bulltiq/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js:12:142572)
+    at Timeout._onTimeout (/Users/nut/Downloads/Bulltiq/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js:12:135349)
+    at listOnTimeout (node:internal/timers:569:17) {
+  digest: '1906633506'
+}
+
+Error occurred prerendering page "/stocks/AMZN". Read more: https://nextjs.org/docs/messages/prerender-error
+
+TypeError: a.analysisTh.includes is not a function
+    at D (/Users/nut/Downloads/Bulltiq/.next/server/app/stocks/[ticker]/page.js:1:4327)
+    at eh (/Users/nut/Downloads/Bulltiq/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js:12:134660)
+    at e (/Users/nut/Downloads/Bulltiq/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js:12:137545)
+    at ek (/Users/nut/Downloads/Bulltiq/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js:12:138019)
+    at Array.toJSON (/Users/nut/Downloads/Bulltiq/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js:12:135629)
+    at stringify (<anonymous>)
+    at eP (/Users/nut/Downloads/Bulltiq/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js:12:142093)
+    at eE (/Users/nut/Downloads/Bulltiq/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js:12:142572)
+    at AsyncLocalStorage.run (node:async_hooks:338:14)
+    at Timeout._onTimeout (/Users/nut/Downloads/Bulltiq/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js:12:150373)
+TypeError: a.analysisTh.includes is not a function
+    at D (/Users/nut/Downloads/Bulltiq/.next/server/app/stocks/[ticker]/page.js:1:4327)
+    at eh (/Users/nut/Downloads/Bulltiq/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js:12:134660)
+    at e (/Users/nut/Downloads/Bulltiq/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js:12:137545)
+    at ek (/Users/nut/Downloads/Bulltiq/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js:12:138019)
+    at Array.toJSON (/Users/nut/Downloads/Bulltiq/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js:12:135629)
+    at stringify (<anonymous>)
+    at eP (/Users/nut/Downloads/Bulltiq/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js:12:142093)
+    at eE (/Users/nut/Downloads/Bulltiq/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js:12:142572)
+    at AsyncLocalStorage.run (node:async_hooks:338:14)
+    at Timeout._onTimeout (/Users/nut/Downloads/Bulltiq/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js:12:150373) {
+  digest: '106400177'
+}
+TypeError: a.analysisTh.includes is not a function
+    at D (/Users/nut/Downloads/Bulltiq/.next/server/app/stocks/[ticker]/page.js:1:4327)
+    at eh (/Users/nut/Downloads/Bulltiq/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js:12:134660)
+    at e (/Users/nut/Downloads/Bulltiq/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js:12:137545)
+    at ek (/Users/nut/Downloads/Bulltiq/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js:12:138019)
+    at Array.toJSON (/Users/nut/Downloads/Bulltiq/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js:12:135629)
+    at stringify (<anonymous>)
+    at eP (/Users/nut/Downloads/Bulltiq/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js:12:142093)
+    at eE (/Users/nut/Downloads/Bulltiq/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js:12:142572)
+    at Timeout._onTimeout (/Users/nut/Downloads/Bulltiq/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js:12:135349)
+    at listOnTimeout (node:internal/timers:569:17) {
+  digest: '1906633506'
+}
+TypeError: a.analysisTh.includes is not a function
+    at D (/Users/nut/Downloads/Bulltiq/.next/server/app/stocks/[ticker]/page.js:1:4327)
+    at eh (/Users/nut/Downloads/Bulltiq/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js:12:134660)
+    at e (/Users/nut/Downloads/Bulltiq/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js:12:137545)
+    at ek (/Users/nut/Downloads/Bulltiq/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js:12:138019)
+    at Array.toJSON (/Users/nut/Downloads/Bulltiq/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js:12:135629)
+    at stringify (<anonymous>)
+    at eP (/Users/nut/Downloads/Bulltiq/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js:12:142093)
+    at eE (/Users/nut/Downloads/Bulltiq/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js:12:142572)
+    at Timeout._onTimeout (/Users/nut/Downloads/Bulltiq/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js:12:135349)
+    at listOnTimeout (node:internal/timers:569:17) {
+  digest: '1906633506'
+}
+
+Error occurred prerendering page "/stocks/AAPL". Read more: https://nextjs.org/docs/messages/prerender-error
+
+TypeError: a.analysisTh.includes is not a function
+    at D (/Users/nut/Downloads/Bulltiq/.next/server/app/stocks/[ticker]/page.js:1:4327)
+    at eh (/Users/nut/Downloads/Bulltiq/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js:12:134660)
+    at e (/Users/nut/Downloads/Bulltiq/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js:12:137545)
+    at ek (/Users/nut/Downloads/Bulltiq/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js:12:138019)
+    at Array.toJSON (/Users/nut/Downloads/Bulltiq/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js:12:135629)
+    at stringify (<anonymous>)
+    at eP (/Users/nut/Downloads/Bulltiq/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js:12:142093)
+    at eE (/Users/nut/Downloads/Bulltiq/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js:12:142572)
+    at AsyncLocalStorage.run (node:async_hooks:338:14)
+    at Timeout._onTimeout (/Users/nut/Downloads/Bulltiq/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js:12:150373)
+TypeError: a.analysisTh.includes is not a function
+    at D (/Users/nut/Downloads/Bulltiq/.next/server/app/stocks/[ticker]/page.js:1:4327)
+    at eh (/Users/nut/Downloads/Bulltiq/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js:12:134660)
+    at e (/Users/nut/Downloads/Bulltiq/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js:12:137545)
+    at ek (/Users/nut/Downloads/Bulltiq/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js:12:138019)
+    at Array.toJSON (/Users/nut/Downloads/Bulltiq/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js:12:135629)
+    at stringify (<anonymous>)
+    at eP (/Users/nut/Downloads/Bulltiq/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js:12:142093)
+    at eE (/Users/nut/Downloads/Bulltiq/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js:12:142572)
+    at AsyncLocalStorage.run (node:async_hooks:338:14)
+    at Timeout._onTimeout (/Users/nut/Downloads/Bulltiq/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js:12:150373) {
+  digest: '106400177'
+}
+TypeError: a.analysisTh.includes is not a function
+    at D (/Users/nut/Downloads/Bulltiq/.next/server/app/stocks/[ticker]/page.js:1:4327)
+    at eh (/Users/nut/Downloads/Bulltiq/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js:12:134660)
+    at e (/Users/nut/Downloads/Bulltiq/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js:12:137545)
+    at ek (/Users/nut/Downloads/Bulltiq/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js:12:138019)
+    at Array.toJSON (/Users/nut/Downloads/Bulltiq/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js:12:135629)
+    at stringify (<anonymous>)
+    at eP (/Users/nut/Downloads/Bulltiq/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js:12:142093)
+    at eE (/Users/nut/Downloads/Bulltiq/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js:12:142572)
+    at Timeout._onTimeout (/Users/nut/Downloads/Bulltiq/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js:12:135349)
+    at listOnTimeout (node:internal/timers:569:17) {
+  digest: '1906633506'
+}
+TypeError: a.analysisTh.includes is not a function
+    at D (/Users/nut/Downloads/Bulltiq/.next/server/app/stocks/[ticker]/page.js:1:4327)
+    at eh (/Users/nut/Downloads/Bulltiq/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js:12:134660)
+    at e (/Users/nut/Downloads/Bulltiq/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js:12:137545)
+    at ek (/Users/nut/Downloads/Bulltiq/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js:12:138019)
+    at Array.toJSON (/Users/nut/Downloads/Bulltiq/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js:12:135629)
+    at stringify (<anonymous>)
+    at eP (/Users/nut/Downloads/Bulltiq/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js:12:142093)
+    at eE (/Users/nut/Downloads/Bulltiq/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js:12:142572)
+    at Timeout._onTimeout (/Users/nut/Downloads/Bulltiq/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js:12:135349)
+    at listOnTimeout (node:internal/timers:569:17) {
+  digest: '1906633506'
+}
+
+Error occurred prerendering page "/stocks/BRK.B". Read more: https://nextjs.org/docs/messages/prerender-error
+
+TypeError: a.analysisTh.includes is not a function
+    at D (/Users/nut/Downloads/Bulltiq/.next/server/app/stocks/[ticker]/page.js:1:4327)
+    at eh (/Users/nut/Downloads/Bulltiq/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js:12:134660)
+    at e (/Users/nut/Downloads/Bulltiq/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js:12:137545)
+    at ek (/Users/nut/Downloads/Bulltiq/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js:12:138019)
+    at Array.toJSON (/Users/nut/Downloads/Bulltiq/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js:12:135629)
+    at stringify (<anonymous>)
+    at eP (/Users/nut/Downloads/Bulltiq/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js:12:142093)
+    at eE (/Users/nut/Downloads/Bulltiq/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js:12:142572)
+    at AsyncLocalStorage.run (node:async_hooks:338:14)
+    at Timeout._onTimeout (/Users/nut/Downloads/Bulltiq/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js:12:150373)
+   Generating static pages (158/634) 
+TypeError: a.analysisTh.includes is not a function
+    at D (/Users/nut/Downloads/Bulltiq/.next/server/app/stocks/[ticker]/page.js:1:4327)
+    at eh (/Users/nut/Downloads/Bulltiq/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js:12:134660)
+    at e (/Users/nut/Downloads/Bulltiq/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js:12:137545)
+    at ek (/Users/nut/Downloads/Bulltiq/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js:12:138019)
+    at Array.toJSON (/Users/nut/Downloads/Bulltiq/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js:12:135629)
+    at stringify (<anonymous>)
+    at eP (/Users/nut/Downloads/Bulltiq/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js:12:142093)
+    at eE (/Users/nut/Downloads/Bulltiq/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js:12:142572)
+    at AsyncLocalStorage.run (node:async_hooks:338:14)
+    at Timeout._onTimeout (/Users/nut/Downloads/Bulltiq/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js:12:150373) {
+  digest: '106400177'
+}
+TypeError: a.analysisTh.includes is not a function
+    at D (/Users/nut/Downloads/Bulltiq/.next/server/app/stocks/[ticker]/page.js:1:4327)
+    at eh (/Users/nut/Downloads/Bulltiq/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js:12:134660)
+    at e (/Users/nut/Downloads/Bulltiq/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js:12:137545)
+    at ek (/Users/nut/Downloads/Bulltiq/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js:12:138019)
+    at Array.toJSON (/Users/nut/Downloads/Bulltiq/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js:12:135629)
+    at stringify (<anonymous>)
+    at eP (/Users/nut/Downloads/Bulltiq/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js:12:142093)
+    at eE (/Users/nut/Downloads/Bulltiq/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js:12:142572)
+    at Timeout._onTimeout (/Users/nut/Downloads/Bulltiq/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js:12:135349)
+    at listOnTimeout (node:internal/timers:569:17) {
+  digest: '1906633506'
+}
+TypeError: a.analysisTh.includes is not a function
+    at D (/Users/nut/Downloads/Bulltiq/.next/server/app/stocks/[ticker]/page.js:1:4327)
+    at eh (/Users/nut/Downloads/Bulltiq/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js:12:134660)
+    at e (/Users/nut/Downloads/Bulltiq/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js:12:137545)
+    at ek (/Users/nut/Downloads/Bulltiq/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js:12:138019)
+    at Array.toJSON (/Users/nut/Downloads/Bulltiq/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js:12:135629)
+    at stringify (<anonymous>)
+    at eP (/Users/nut/Downloads/Bulltiq/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js:12:142093)
+    at eE (/Users/nut/Downloads/Bulltiq/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js:12:142572)
+    at Timeout._onTimeout (/Users/nut/Downloads/Bulltiq/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js:12:135349)
+    at listOnTimeout (node:internal/timers:569:17) {
+  digest: '1906633506'
+}
+
+Error occurred prerendering page "/stocks/JPM". Read more: https://nextjs.org/docs/messages/prerender-error
+
+TypeError: a.analysisTh.includes is not a function
+    at D (/Users/nut/Downloads/Bulltiq/.next/server/app/stocks/[ticker]/page.js:1:4327)
+    at eh (/Users/nut/Downloads/Bulltiq/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js:12:134660)
+    at e (/Users/nut/Downloads/Bulltiq/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js:12:137545)
+    at ek (/Users/nut/Downloads/Bulltiq/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js:12:138019)
+    at Array.toJSON (/Users/nut/Downloads/Bulltiq/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js:12:135629)
+    at stringify (<anonymous>)
+    at eP (/Users/nut/Downloads/Bulltiq/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js:12:142093)
+    at eE (/Users/nut/Downloads/Bulltiq/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js:12:142572)
+    at AsyncLocalStorage.run (node:async_hooks:338:14)
+    at Timeout._onTimeout (/Users/nut/Downloads/Bulltiq/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js:12:150373)
+TypeError: a.analysisTh.includes is not a function
+    at D (/Users/nut/Downloads/Bulltiq/.next/server/app/stocks/[ticker]/page.js:1:4327)
+    at eh (/Users/nut/Downloads/Bulltiq/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js:12:134660)
+    at e (/Users/nut/Downloads/Bulltiq/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js:12:137545)
+    at ek (/Users/nut/Downloads/Bulltiq/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js:12:138019)
+    at Array.toJSON (/Users/nut/Downloads/Bulltiq/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js:12:135629)
+    at stringify (<anonymous>)
+    at eP (/Users/nut/Downloads/Bulltiq/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js:12:142093)
+    at eE (/Users/nut/Downloads/Bulltiq/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js:12:142572)
+    at AsyncLocalStorage.run (node:async_hooks:338:14)
+    at Timeout._onTimeout (/Users/nut/Downloads/Bulltiq/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js:12:150373) {
+  digest: '106400177'
+}
+TypeError: a.analysisTh.includes is not a function
+    at D (/Users/nut/Downloads/Bulltiq/.next/server/app/stocks/[ticker]/page.js:1:4327)
+    at eh (/Users/nut/Downloads/Bulltiq/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js:12:134660)
+    at e (/Users/nut/Downloads/Bulltiq/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js:12:137545)
+    at ek (/Users/nut/Downloads/Bulltiq/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js:12:138019)
+    at Array.toJSON (/Users/nut/Downloads/Bulltiq/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js:12:135629)
+    at stringify (<anonymous>)
+    at eP (/Users/nut/Downloads/Bulltiq/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js:12:142093)
+    at eE (/Users/nut/Downloads/Bulltiq/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js:12:142572)
+    at Timeout._onTimeout (/Users/nut/Downloads/Bulltiq/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js:12:135349)
+    at listOnTimeout (node:internal/timers:569:17) {
+  digest: '1906633506'
+}
+TypeError: a.analysisTh.includes is not a function
+    at D (/Users/nut/Downloads/Bulltiq/.next/server/app/stocks/[ticker]/page.js:1:4327)
+    at eh (/Users/nut/Downloads/Bulltiq/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js:12:134660)
+    at e (/Users/nut/Downloads/Bulltiq/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js:12:137545)
+    at ek (/Users/nut/Downloads/Bulltiq/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js:12:138019)
+    at Array.toJSON (/Users/nut/Downloads/Bulltiq/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js:12:135629)
+    at stringify (<anonymous>)
+    at eP (/Users/nut/Downloads/Bulltiq/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js:12:142093)
+    at eE (/Users/nut/Downloads/Bulltiq/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js:12:142572)
+    at Timeout._onTimeout (/Users/nut/Downloads/Bulltiq/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js:12:135349)
+    at listOnTimeout (node:internal/timers:569:17) {
+  digest: '1906633506'
+}
+
+Error occurred prerendering page "/stocks/META". Read more: https://nextjs.org/docs/messages/prerender-error
+
+TypeError: a.analysisTh.includes is not a function
+    at D (/Users/nut/Downloads/Bulltiq/.next/server/app/stocks/[ticker]/page.js:1:4327)
+    at eh (/Users/nut/Downloads/Bulltiq/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js:12:134660)
+    at e (/Users/nut/Downloads/Bulltiq/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js:12:137545)
+    at ek (/Users/nut/Downloads/Bulltiq/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js:12:138019)
+    at Array.toJSON (/Users/nut/Downloads/Bulltiq/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js:12:135629)
+    at stringify (<anonymous>)
+    at eP (/Users/nut/Downloads/Bulltiq/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js:12:142093)
+    at eE (/Users/nut/Downloads/Bulltiq/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js:12:142572)
+    at AsyncLocalStorage.run (node:async_hooks:338:14)
+    at Timeout._onTimeout (/Users/nut/Downloads/Bulltiq/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js:12:150373)
+TypeError: a.analysisTh.includes is not a function
+    at D (/Users/nut/Downloads/Bulltiq/.next/server/app/stocks/[ticker]/page.js:1:4327)
+    at eh (/Users/nut/Downloads/Bulltiq/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js:12:134660)
+    at e (/Users/nut/Downloads/Bulltiq/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js:12:137545)
+    at ek (/Users/nut/Downloads/Bulltiq/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js:12:138019)
+    at Array.toJSON (/Users/nut/Downloads/Bulltiq/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js:12:135629)
+    at stringify (<anonymous>)
+    at eP (/Users/nut/Downloads/Bulltiq/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js:12:142093)
+    at eE (/Users/nut/Downloads/Bulltiq/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js:12:142572)
+    at AsyncLocalStorage.run (node:async_hooks:338:14)
+    at Timeout._onTimeout (/Users/nut/Downloads/Bulltiq/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js:12:150373) {
+  digest: '106400177'
+}
+TypeError: a.analysisTh.includes is not a function
+    at D (/Users/nut/Downloads/Bulltiq/.next/server/app/stocks/[ticker]/page.js:1:4327)
+    at eh (/Users/nut/Downloads/Bulltiq/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js:12:134660)
+    at e (/Users/nut/Downloads/Bulltiq/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js:12:137545)
+    at ek (/Users/nut/Downloads/Bulltiq/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js:12:138019)
+    at Array.toJSON (/Users/nut/Downloads/Bulltiq/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js:12:135629)
+    at stringify (<anonymous>)
+    at eP (/Users/nut/Downloads/Bulltiq/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js:12:142093)
+    at eE (/Users/nut/Downloads/Bulltiq/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js:12:142572)
+    at Timeout._onTimeout (/Users/nut/Downloads/Bulltiq/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js:12:135349)
+    at listOnTimeout (node:internal/timers:569:17) {
+  digest: '1906633506'
+}
+TypeError: a.analysisTh.includes is not a function
+    at D (/Users/nut/Downloads/Bulltiq/.next/server/app/stocks/[ticker]/page.js:1:4327)
+    at eh (/Users/nut/Downloads/Bulltiq/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js:12:134660)
+    at e (/Users/nut/Downloads/Bulltiq/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js:12:137545)
+    at ek (/Users/nut/Downloads/Bulltiq/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js:12:138019)
+    at Array.toJSON (/Users/nut/Downloads/Bulltiq/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js:12:135629)
+    at stringify (<anonymous>)
+    at eP (/Users/nut/Downloads/Bulltiq/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js:12:142093)
+    at eE (/Users/nut/Downloads/Bulltiq/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js:12:142572)
+    at Timeout._onTimeout (/Users/nut/Downloads/Bulltiq/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js:12:135349)
+    at listOnTimeout (node:internal/timers:569:17) {
+  digest: '1906633506'
+}
+
+Error occurred prerendering page "/stocks/MSFT". Read more: https://nextjs.org/docs/messages/prerender-error
+
+TypeError: a.analysisTh.includes is not a function
+    at D (/Users/nut/Downloads/Bulltiq/.next/server/app/stocks/[ticker]/page.js:1:4327)
+    at eh (/Users/nut/Downloads/Bulltiq/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js:12:134660)
+    at e (/Users/nut/Downloads/Bulltiq/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js:12:137545)
+    at ek (/Users/nut/Downloads/Bulltiq/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js:12:138019)
+    at Array.toJSON (/Users/nut/Downloads/Bulltiq/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js:12:135629)
+    at stringify (<anonymous>)
+    at eP (/Users/nut/Downloads/Bulltiq/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js:12:142093)
+    at eE (/Users/nut/Downloads/Bulltiq/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js:12:142572)
+    at AsyncLocalStorage.run (node:async_hooks:338:14)
+    at Timeout._onTimeout (/Users/nut/Downloads/Bulltiq/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js:12:150373)
+   Generating static pages (316/634) 
+TypeError: a.analysisTh.includes is not a function
+    at D (/Users/nut/Downloads/Bulltiq/.next/server/app/stocks/[ticker]/page.js:1:4327)
+    at eh (/Users/nut/Downloads/Bulltiq/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js:12:134660)
+    at e (/Users/nut/Downloads/Bulltiq/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js:12:137545)
+    at ek (/Users/nut/Downloads/Bulltiq/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js:12:138019)
+    at Array.toJSON (/Users/nut/Downloads/Bulltiq/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js:12:135629)
+    at stringify (<anonymous>)
+    at eP (/Users/nut/Downloads/Bulltiq/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js:12:142093)
+    at eE (/Users/nut/Downloads/Bulltiq/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js:12:142572)
+    at AsyncLocalStorage.run (node:async_hooks:338:14)
+    at Timeout._onTimeout (/Users/nut/Downloads/Bulltiq/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js:12:150373) {
+  digest: '106400177'
+}
+TypeError: a.analysisTh.includes is not a function
+    at D (/Users/nut/Downloads/Bulltiq/.next/server/app/stocks/[ticker]/page.js:1:4327)
+    at eh (/Users/nut/Downloads/Bulltiq/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js:12:134660)
+    at e (/Users/nut/Downloads/Bulltiq/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js:12:137545)
+    at ek (/Users/nut/Downloads/Bulltiq/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js:12:138019)
+    at Array.toJSON (/Users/nut/Downloads/Bulltiq/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js:12:135629)
+    at stringify (<anonymous>)
+    at eP (/Users/nut/Downloads/Bulltiq/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js:12:142093)
+    at eE (/Users/nut/Downloads/Bulltiq/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js:12:142572)
+    at Timeout._onTimeout (/Users/nut/Downloads/Bulltiq/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js:12:135349)
+    at listOnTimeout (node:internal/timers:569:17) {
+  digest: '1906633506'
+}
+TypeError: a.analysisTh.includes is not a function
+    at D (/Users/nut/Downloads/Bulltiq/.next/server/app/stocks/[ticker]/page.js:1:4327)
+    at eh (/Users/nut/Downloads/Bulltiq/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js:12:134660)
+    at e (/Users/nut/Downloads/Bulltiq/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js:12:137545)
+    at ek (/Users/nut/Downloads/Bulltiq/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js:12:138019)
+    at Array.toJSON (/Users/nut/Downloads/Bulltiq/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js:12:135629)
+    at stringify (<anonymous>)
+    at eP (/Users/nut/Downloads/Bulltiq/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js:12:142093)
+    at eE (/Users/nut/Downloads/Bulltiq/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js:12:142572)
+    at Timeout._onTimeout (/Users/nut/Downloads/Bulltiq/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js:12:135349)
+    at listOnTimeout (node:internal/timers:569:17) {
+  digest: '1906633506'
+}
+
+Error occurred prerendering page "/stocks/NVDA". Read more: https://nextjs.org/docs/messages/prerender-error
+
+TypeError: a.analysisTh.includes is not a function
+    at D (/Users/nut/Downloads/Bulltiq/.next/server/app/stocks/[ticker]/page.js:1:4327)
+    at eh (/Users/nut/Downloads/Bulltiq/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js:12:134660)
+    at e (/Users/nut/Downloads/Bulltiq/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js:12:137545)
+    at ek (/Users/nut/Downloads/Bulltiq/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js:12:138019)
+    at Array.toJSON (/Users/nut/Downloads/Bulltiq/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js:12:135629)
+    at stringify (<anonymous>)
+    at eP (/Users/nut/Downloads/Bulltiq/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js:12:142093)
+    at eE (/Users/nut/Downloads/Bulltiq/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js:12:142572)
+    at AsyncLocalStorage.run (node:async_hooks:338:14)
+    at Timeout._onTimeout (/Users/nut/Downloads/Bulltiq/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js:12:150373)
+TypeError: a.analysisTh.includes is not a function
+    at D (/Users/nut/Downloads/Bulltiq/.next/server/app/stocks/[ticker]/page.js:1:4327)
+    at eh (/Users/nut/Downloads/Bulltiq/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js:12:134660)
+    at e (/Users/nut/Downloads/Bulltiq/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js:12:137545)
+    at ek (/Users/nut/Downloads/Bulltiq/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js:12:138019)
+    at Array.toJSON (/Users/nut/Downloads/Bulltiq/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js:12:135629)
+    at stringify (<anonymous>)
+    at eP (/Users/nut/Downloads/Bulltiq/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js:12:142093)
+    at eE (/Users/nut/Downloads/Bulltiq/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js:12:142572)
+    at AsyncLocalStorage.run (node:async_hooks:338:14)
+    at Timeout._onTimeout (/Users/nut/Downloads/Bulltiq/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js:12:150373) {
+  digest: '106400177'
+}
+TypeError: a.analysisTh.includes is not a function
+    at D (/Users/nut/Downloads/Bulltiq/.next/server/app/stocks/[ticker]/page.js:1:4327)
+    at eh (/Users/nut/Downloads/Bulltiq/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js:12:134660)
+    at e (/Users/nut/Downloads/Bulltiq/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js:12:137545)
+    at ek (/Users/nut/Downloads/Bulltiq/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js:12:138019)
+    at Array.toJSON (/Users/nut/Downloads/Bulltiq/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js:12:135629)
+    at stringify (<anonymous>)
+    at eP (/Users/nut/Downloads/Bulltiq/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js:12:142093)
+    at eE (/Users/nut/Downloads/Bulltiq/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js:12:142572)
+    at Timeout._onTimeout (/Users/nut/Downloads/Bulltiq/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js:12:135349)
+    at listOnTimeout (node:internal/timers:569:17) {
+  digest: '1906633506'
+}
+TypeError: a.analysisTh.includes is not a function
+    at D (/Users/nut/Downloads/Bulltiq/.next/server/app/stocks/[ticker]/page.js:1:4327)
+    at eh (/Users/nut/Downloads/Bulltiq/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js:12:134660)
+    at e (/Users/nut/Downloads/Bulltiq/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js:12:137545)
+    at ek (/Users/nut/Downloads/Bulltiq/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js:12:138019)
+    at Array.toJSON (/Users/nut/Downloads/Bulltiq/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js:12:135629)
+    at stringify (<anonymous>)
+    at eP (/Users/nut/Downloads/Bulltiq/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js:12:142093)
+    at eE (/Users/nut/Downloads/Bulltiq/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js:12:142572)
+    at Timeout._onTimeout (/Users/nut/Downloads/Bulltiq/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js:12:135349)
+    at listOnTimeout (node:internal/timers:569:17) {
+  digest: '1906633506'
+}
+
+Error occurred prerendering page "/stocks/TSLA". Read more: https://nextjs.org/docs/messages/prerender-error
+
+TypeError: a.analysisTh.includes is not a function
+    at D (/Users/nut/Downloads/Bulltiq/.next/server/app/stocks/[ticker]/page.js:1:4327)
+    at eh (/Users/nut/Downloads/Bulltiq/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js:12:134660)
+    at e (/Users/nut/Downloads/Bulltiq/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js:12:137545)
+    at ek (/Users/nut/Downloads/Bulltiq/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js:12:138019)
+    at Array.toJSON (/Users/nut/Downloads/Bulltiq/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js:12:135629)
+    at stringify (<anonymous>)
+    at eP (/Users/nut/Downloads/Bulltiq/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js:12:142093)
+    at eE (/Users/nut/Downloads/Bulltiq/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js:12:142572)
+    at AsyncLocalStorage.run (node:async_hooks:338:14)
+    at Timeout._onTimeout (/Users/nut/Downloads/Bulltiq/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js:12:150373)
+TypeError: a.analysisTh.includes is not a function
+    at D (/Users/nut/Downloads/Bulltiq/.next/server/app/stocks/[ticker]/page.js:1:4327)
+    at eh (/Users/nut/Downloads/Bulltiq/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js:12:134660)
+    at e (/Users/nut/Downloads/Bulltiq/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js:12:137545)
+    at ek (/Users/nut/Downloads/Bulltiq/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js:12:138019)
+    at Array.toJSON (/Users/nut/Downloads/Bulltiq/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js:12:135629)
+    at stringify (<anonymous>)
+    at eP (/Users/nut/Downloads/Bulltiq/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js:12:142093)
+    at eE (/Users/nut/Downloads/Bulltiq/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js:12:142572)
+    at AsyncLocalStorage.run (node:async_hooks:338:14)
+    at Timeout._onTimeout (/Users/nut/Downloads/Bulltiq/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js:12:150373) {
+  digest: '106400177'
+}
+TypeError: a.analysisTh.includes is not a function
+    at D (/Users/nut/Downloads/Bulltiq/.next/server/app/stocks/[ticker]/page.js:1:4327)
+    at eh (/Users/nut/Downloads/Bulltiq/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js:12:134660)
+    at e (/Users/nut/Downloads/Bulltiq/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js:12:137545)
+    at ek (/Users/nut/Downloads/Bulltiq/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js:12:138019)
+    at Array.toJSON (/Users/nut/Downloads/Bulltiq/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js:12:135629)
+    at stringify (<anonymous>)
+    at eP (/Users/nut/Downloads/Bulltiq/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js:12:142093)
+    at eE (/Users/nut/Downloads/Bulltiq/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js:12:142572)
+    at Timeout._onTimeout (/Users/nut/Downloads/Bulltiq/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js:12:135349)
+    at listOnTimeout (node:internal/timers:569:17) {
+  digest: '1906633506'
+}
+TypeError: a.analysisTh.includes is not a function
+    at D (/Users/nut/Downloads/Bulltiq/.next/server/app/stocks/[ticker]/page.js:1:4327)
+    at eh (/Users/nut/Downloads/Bulltiq/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js:12:134660)
+    at e (/Users/nut/Downloads/Bulltiq/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js:12:137545)
+    at ek (/Users/nut/Downloads/Bulltiq/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js:12:138019)
+    at Array.toJSON (/Users/nut/Downloads/Bulltiq/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js:12:135629)
+    at stringify (<anonymous>)
+    at eP (/Users/nut/Downloads/Bulltiq/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js:12:142093)
+    at eE (/Users/nut/Downloads/Bulltiq/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js:12:142572)
+    at Timeout._onTimeout (/Users/nut/Downloads/Bulltiq/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js:12:135349)
+    at listOnTimeout (node:internal/timers:569:17) {
+  digest: '1906633506'
+}
+
+Error occurred prerendering page "/stocks/V". Read more: https://nextjs.org/docs/messages/prerender-error
+
+TypeError: a.analysisTh.includes is not a function
+    at D (/Users/nut/Downloads/Bulltiq/.next/server/app/stocks/[ticker]/page.js:1:4327)
+    at eh (/Users/nut/Downloads/Bulltiq/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js:12:134660)
+    at e (/Users/nut/Downloads/Bulltiq/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js:12:137545)
+    at ek (/Users/nut/Downloads/Bulltiq/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js:12:138019)
+    at Array.toJSON (/Users/nut/Downloads/Bulltiq/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js:12:135629)
+    at stringify (<anonymous>)
+    at eP (/Users/nut/Downloads/Bulltiq/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js:12:142093)
+    at eE (/Users/nut/Downloads/Bulltiq/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js:12:142572)
+    at AsyncLocalStorage.run (node:async_hooks:338:14)
+    at Timeout._onTimeout (/Users/nut/Downloads/Bulltiq/node_modules/next/dist/compiled/next-server/app-page.runtime.prod.js:12:150373)
+   Generating static pages (475/634) 
+ ✓ Generating static pages (634/634)
+
+> Export encountered errors on following paths:
+	/stocks/[ticker]/page: /stocks/AAPL
+	/stocks/[ticker]/page: /stocks/AMZN
+	/stocks/[ticker]/page: /stocks/BRK.B
+	/stocks/[ticker]/page: /stocks/GOOGL
+	/stocks/[ticker]/page: /stocks/JPM
+	/stocks/[ticker]/page: /stocks/META
+	/stocks/[ticker]/page: /stocks/MSFT
+	/stocks/[ticker]/page: /stocks/NVDA
+	/stocks/[ticker]/page: /stocks/TSLA
+	/stocks/[ticker]/page: /stocks/V

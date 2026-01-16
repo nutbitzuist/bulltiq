@@ -1,101 +1,129 @@
-import Image from "next/image";
+import { Hero } from "@/components/home/hero";
+import { MarketOverview } from "@/components/home/market-overview";
+import { IndexPreview } from "@/components/home/index-preview";
+import { NewsletterForm } from "@/components/home/newsletter-form";
+import Link from "next/link";
+import { Card } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { ArrowRight, BookOpen, TrendingUp, Shield } from "lucide-react";
 
-export default function Home() {
+// Features section
+const features = [
+  {
+    icon: TrendingUp,
+    title: "ข้อมูลหุ้นครบถ้วน",
+    description: "ครอบคลุม S&P 500, NASDAQ 100 และ ETF ยอดนิยมมากกว่า 600 ตัว",
+  },
+  {
+    icon: BookOpen,
+    title: "บทวิเคราะห์ภาษาไทย",
+    description: "บทวิเคราะห์หุ้นที่เข้าใจง่าย เขียนโดย AI เหมาะสำหรับนักลงทุนไทย",
+  },
+  {
+    icon: Shield,
+    title: "ข้อมูลเชื่อถือได้",
+    description: "ข้อมูลจากแหล่งที่น่าเชื่อถือ อัปเดตแบบ Real-time",
+  },
+];
+
+export default function HomePage() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="https://nextjs.org/icons/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+    <div>
+      {/* Hero Section */}
+      <Hero />
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="https://nextjs.org/icons/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+      {/* Market Overview */}
+      <MarketOverview />
+
+      {/* Index Preview */}
+      <IndexPreview />
+
+      {/* Features Section */}
+      <section className="py-16 bg-background">
+        <div className="container mx-auto px-4">
+          <h2 className="text-2xl md:text-3xl font-bold text-center mb-12">
+            ทำไมต้อง{" "}
+            <span className="bg-primary px-2 py-1 border-2 border-black shadow-brutal-sm">
+              Bulltiq
+            </span>
+          </h2>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {features.map((feature) => (
+              <Card key={feature.title} className="text-center">
+                <div className="inline-flex items-center justify-center w-16 h-16 bg-primary border-3 border-black shadow-brutal-sm mb-4">
+                  <feature.icon className="w-8 h-8" />
+                </div>
+                <h3 className="text-xl font-bold mb-2">{feature.title}</h3>
+                <p className="text-text-secondary">{feature.description}</p>
+              </Card>
+            ))}
+          </div>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+      </section>
+
+      {/* ETF Section */}
+      <section className="py-12 bg-surface border-y-3 border-black">
+        <div className="container mx-auto px-4">
+          <div className="flex flex-wrap justify-between items-center gap-4 mb-8">
+            <div>
+              <h2 className="text-2xl font-bold flex items-center gap-2">
+                <span className="bg-accent-blue text-white px-3 py-1 border-2 border-black">📦</span>
+                ETF ยอดนิยม
+              </h2>
+              <p className="text-text-secondary mt-1">
+                กองทุน ETF ที่ได้รับความนิยมสูงสุดสำหรับนักลงทุนรายย่อย
+              </p>
+            </div>
+            <Link href="/etf">
+              <Button variant="outline">
+                ดูทั้งหมด
+                <ArrowRight className="w-4 h-4 ml-2" />
+              </Button>
+            </Link>
+          </div>
+
+          <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
+            {["SPY", "QQQ", "VOO", "VTI", "IVV"].map((ticker) => (
+              <Link
+                key={ticker}
+                href={`/etf/${ticker}`}
+                className="bg-white border-3 border-black p-4 text-center shadow-brutal-sm hover:shadow-brutal-md hover:translate-x-[-2px] hover:translate-y-[-2px] transition-all"
+              >
+                <div className="font-bold text-xl font-display">{ticker}</div>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Newsletter */}
+      <NewsletterForm />
+
+      {/* CTA Section */}
+      <section className="py-16 bg-black text-white">
+        <div className="container mx-auto px-4 text-center">
+          <h2 className="text-2xl md:text-3xl font-bold mb-4">
+            เริ่มต้นศึกษาหุ้นอเมริกาวันนี้
+          </h2>
+          <p className="text-white/80 mb-8 max-w-2xl mx-auto">
+            เข้าถึงข้อมูลหุ้นมากกว่า 600 ตัว พร้อมบทวิเคราะห์ภาษาไทยที่เข้าใจง่าย
+            ฟรีไม่มีค่าใช้จ่าย
+          </p>
+          <div className="flex flex-wrap justify-center gap-4">
+            <Link href="/stocks/sp500">
+              <Button
+                variant="primary"
+                size="lg"
+                className="bg-primary text-black"
+              >
+                เริ่มต้นใช้งาน
+                <ArrowRight className="w-5 h-5 ml-2" />
+              </Button>
+            </Link>
+          </div>
+        </div>
+      </section>
     </div>
   );
 }
