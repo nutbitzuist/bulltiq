@@ -56,47 +56,47 @@ function formatThaiDate(dateString: string): string {
 }
 
 function renderContent(content: string) {
-    const paragraphs = content.split('\n\n');
+    // Split by double newline to identify paragraphs
+    const sections = content.split('\n\n');
 
-    return paragraphs.map((paragraph, i) => {
-        const trimmed = paragraph.trim();
+    return sections.map((section, i) => {
+        const trimmed = section.trim();
         if (!trimmed) return null;
 
-        // Check for headers (lines ending with ? or : and shorter than 60 chars, or starting with คำถามที่)
+        // Check if it's a list (starts with • or - or number)
+        if (trimmed.startsWith('•') || trimmed.startsWith('-') || /^\d+\.\s/.test(trimmed.substring(0, 5))) {
+            const lines = trimmed.split('\n');
+            // If it's a bullet list
+            if (lines.every(line => line.trim().startsWith('•') || line.trim().startsWith('-'))) {
+                return (
+                    <ul key={i} className="mb-6 space-y-2 list-disc pl-6">
+                        {lines.map((line, j) => (
+                            <li key={j} className="text-text-primary text-lg leading-relaxed">
+                                {line.replace(/^[•\-]\s*/, '').trim()}
+                            </li>
+                        ))}
+                    </ul>
+                );
+            }
+        }
+
+        // Check if it looks like a header (short, no punctuation at end usually, or starts with known header patterns)
+        // Relaxed rule: just check if it's short and looks like a topic
         const isHeader = (
-            (trimmed.endsWith('?') && trimmed.length < 80) ||
-            (trimmed.endsWith(':') && trimmed.length < 60) ||
-            trimmed.startsWith('คำถามที่') ||
-            trimmed.startsWith('สรุป') ||
-            /^[0-9]+\.\s/.test(trimmed.slice(0, 5))
+            (trimmed.length < 100 && (trimmed.endsWith('?') || trimmed.startsWith('คำถาม') || trimmed.startsWith('สรุป') || /^\d+\.\s/.test(trimmed)))
         );
 
-        if (isHeader && !trimmed.startsWith('•') && !trimmed.startsWith('-')) {
+        if (isHeader) {
             return (
-                <h2 key={i} className="text-xl font-bold mt-8 mb-4 bg-primary/20 px-3 py-2 border-l-4 border-primary">
+                <h2 key={i} className="text-2xl font-bold mt-10 mb-4 text-primary">
                     {trimmed}
                 </h2>
             );
         }
 
-        // Check for bullet points
-        if (trimmed.startsWith('•') || trimmed.startsWith('-') || trimmed.startsWith('→')) {
-            const lines = trimmed.split('\n');
-            return (
-                <ul key={i} className="mb-4 space-y-2">
-                    {lines.map((line, j) => (
-                        <li key={j} className="ml-4 text-text-secondary flex items-start gap-2">
-                            <span className="text-primary mt-1">•</span>
-                            <span>{line.replace(/^[•\-→]\s*/, '')}</span>
-                        </li>
-                    ))}
-                </ul>
-            );
-        }
-
         // Regular paragraph
         return (
-            <p key={i} className="mb-4 text-text-secondary leading-relaxed text-lg">
+            <p key={i} className="mb-6 text-text-primary text-lg leading-relaxed text-justify">
                 {trimmed}
             </p>
         );
