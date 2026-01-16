@@ -9,6 +9,7 @@ export const NAV_ITEMS = [
 
 // Index tabs
 export const INDEX_TABS = [
+    { id: "all", label: "ทั้งหมด", href: "/stocks" },
     { id: "sp500", label: "S&P 500", href: "/stocks/sp500" },
     { id: "nasdaq100", label: "NASDAQ 100", href: "/stocks/nasdaq100" },
     { id: "dow-jones", label: "Dow Jones", href: "/stocks/dow-jones" },

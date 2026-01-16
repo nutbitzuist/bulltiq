@@ -15,11 +15,25 @@ export function NewsletterForm() {
 
         setStatus("loading");
 
-        // Simulate API call
-        await new Promise((resolve) => setTimeout(resolve, 1000));
+        try {
+            const response = await fetch("/api/newsletter", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ email }),
+            });
 
-        setStatus("success");
-        setEmail("");
+            const data = await response.json();
+
+            if (data.success) {
+                setStatus("success");
+                setEmail("");
+            } else {
+                setStatus("error");
+            }
+        } catch (error) {
+            console.error("Subscription failed:", error);
+            setStatus("error");
+        }
     };
 
     return (

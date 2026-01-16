@@ -1,9 +1,25 @@
+"use client";
+
 import Link from "next/link";
+import { useState } from "react";
+import { useRouter } from "next/navigation";
 import { SearchInput } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 
 export function Hero() {
+    const [searchQuery, setSearchQuery] = useState("");
+    const router = useRouter();
+
+    const handleSearch = (e: React.FormEvent) => {
+        e.preventDefault();
+        const query = searchQuery.trim().toUpperCase();
+        if (!query) return;
+
+        // Navigate to stocks page with search query
+        router.push(`/stocks?search=${encodeURIComponent(query)}`);
+    };
+
     return (
         <section className="bg-background py-16 md:py-24 border-b-3 border-black">
             <div className="container mx-auto px-4">
@@ -22,17 +38,18 @@ export function Hero() {
                     </h1>
 
                     <p className="text-xl md:text-2xl text-text-secondary mb-8">
-                        วิเคราะห์หุ้น S&P 500, NASDAQ 100 และ ETF ยอดนิยม
+                        วิเคราะห์หุ้น S&P 500, NASDAQ 100, Dow Jones และ ETF ยอดนิยม
                         <br />
                         พร้อมบทวิเคราะห์ภาษาไทยที่เข้าใจง่าย
                     </p>
 
                     {/* Search Bar */}
                     <div className="max-w-xl mx-auto mb-8">
-                        <form action="/stocks" className="flex gap-2">
+                        <form onSubmit={handleSearch} className="flex gap-2">
                             <div className="flex-1">
                                 <SearchInput
-                                    name="search"
+                                    value={searchQuery}
+                                    onChange={(e) => setSearchQuery(e.target.value)}
                                     placeholder="ค้นหาหุ้น... (AAPL, Tesla, NVIDIA)"
                                     className="w-full text-lg py-4"
                                 />
@@ -56,6 +73,11 @@ export function Hero() {
                                 ดู NASDAQ 100
                             </Button>
                         </Link>
+                        <Link href="/stocks/dow-jones">
+                            <Button variant="secondary" size="lg">
+                                ดู DOW JONES
+                            </Button>
+                        </Link>
                         <Link href="/etf">
                             <Button variant="outline" size="lg">
                                 ETF ยอดนิยม
@@ -67,3 +89,4 @@ export function Hero() {
         </section>
     );
 }
+
